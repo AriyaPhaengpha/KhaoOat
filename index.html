@@ -99,18 +99,19 @@
 
 
 
-            function submitInterest(){
-                let intersetDom=document.querySelectorAll('input[name=interest]');
-                let contentHTML = '<ul>';
-                    for(let i=0; i <interestDOM.length; i++){
-                        if(interestDOM[i].checked){
-                            console.log(interestDOM[i].value);
-                            contentHTML += '<li>' + intersetDOM[i].value+ '</li>';
-                        }
-                    }
+function submitInterest(){
+            let interestDOM = document.querySelectorAll('input[name=interest]');
+            let contentHTML = '<ul>';
+            
+            for(let i=0; i < interestDOM.length; i++){
+                if(interestDOM[i].checked){
+                    console.log(interestDOM[i].value);
+                    contentHTML += '<li>' + interestDOM[i].value + '</li>';
+                }
+            }
             contentHTML += '</ul>';
-            let contentDOM=document.getElementById('NewContent');
-            contentDOM.innerHTML=contentHTML;
+            let contentDOM = document.getElementById('NewContent');
+            contentDOM.innerHTML = contentHTML;
         }
     </script>
 </body>
