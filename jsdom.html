@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js data</title>
+</head>
+<body>
+    <div id="myhello">Hello</div>
+
+        <input id="firstname" name="first" value="ทดสอบ">
+        <div>
+            <h2>สิ่งที่น่าสนใจ</h2>
+            <div id="NewContent"></div>
+        </div>
+
+
+    <div>
+        <input type="checkbox" name="interest" value="หนังสือ">หนังสือ
+        <input type="checkbox" name="interest" value="เกม ">เกม
+        <input type="checkbox" name="interest" value="กีฬา">กีฬา
+    </div>
+
+        <div>
+        <button onclick='submitInterest()'>สิ่งที่สนใจ</button>
+    </div>
+
+    <div>
+        <button onclick='buttonclick()'>คลิก</button>
+    </div>
+
+     <div>
+        <button id="submit_btn" onclick='submitData()'>ส่งข้อมูล</button>
+    </div>
+
+    <div> 
+        <button onmouseover='overItem()'>ลากเมาส์ผ่าน</button>
+    </div>
+
+    <div  id="hellomykhaooat">Hello <span style="display: none;">My KhaoOat</span>
+
+    </div>
+
+    <div id="mycontect"></div>
+
+
+    <script>
+        console.log('Hello');
+
+        let firstnameDOM=document.getElementById('firstname');
+        
+        console.log(firstnameDOM.value);
+
+        console.log(document.getElementById('firstname'));
+
+        console.log(document.getElementById('firstname').value);
+        console.log(document.querySelector('#firstname').value);
+        console.log(document.querySelector('input[name="first"]').value);
+
+
+        let inputs=document.querySelectorAll('input[name=interest]');
+        console.log(inputs.length);
+
+        for(let i=0; i < inputs.length; i++){
+            console.log(inputs[i].value);
+        }
+
+        function buttonclick(){
+            console.log('คลิกเเล้ว');
+        };
+        const btn=document.getElementById('submit_btn');
+        btn.addEventListener('Click', submitData);
+
+        function submitData(){
+            console.log('ส่งข้อมูลแล้ว');
+        }
+
+
+        function overItem(){
+            console.log('วางเมาส์แล้ว');
+        };
+
+        const myname = document.getElementById(hellomykhaooat);
+        console.log(myname);
+        // console.log(myname.textContent);
+        // console.log(myname.innerText);
+        // console.log(myname.innerHTML);
+
+
+        let myhtml = '<ul>';
+            myhtml += '<li>' + firstnameDOM.value + '</li>';
+            myhtml += '</ul>';
+
+            console.log(document.getElementById('mycontect').innerHTML=myhtml);
+
+            let setCSS=document.getElementById('myhello');
+            setCSS.style.backgroundColor = 'red';
+            setCSS.style.color = 'purple';
+
+
+
+            function submitInterest(){
+                let intersetDom=document.querySelectorAll('input[name=interest]');
+                let contentHTML = '<ul>';
+                    for(let i=0; i <interestDOM.length; i++){
+                        if(interestDOM[i].checked){
+                            console.log(interestDOM[i].value);
+                            contentHTML += '<li>' + intersetDOM[i].value+ '</li>';
+                        }
+                    }
+            contentHTML += '</ul>';
+            let contentDOM=document.getElementById('NewContent');
+            contentDOM.innerHTML=contentHTML;
+        }
+    </script>
+</body>
+</html>
